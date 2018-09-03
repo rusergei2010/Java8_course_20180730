@@ -2,7 +2,9 @@ package b_streams.data;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -10,7 +12,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Generator {
-
     public static String generateString() {
         final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         final int maxLength = 10;
@@ -58,13 +59,85 @@ public class Generator {
     }
 
     public static List<Employee> generateEmployeeList() {
-        // TODO
-        throw new UnsupportedOperationException();
+        return new ArrayList<Employee>(Arrays.asList(
+                new Employee(
+                        new Person("John", "Galt", 20),
+                        Arrays.asList(
+                                new JobHistoryEntry(3, "dev", "epam"),
+                                new JobHistoryEntry(2, "dev", "google")
+                        )),
+                new Employee(
+                        new Person("John", "Doe", 21),
+                        Arrays.asList(
+                                new JobHistoryEntry(4, "BA", "yandex"),
+                                new JobHistoryEntry(2, "QA", "epam"),
+                                new JobHistoryEntry(2, "dev", "abc")
+                        )),
+                new Employee(
+                        new Person("John", "White", 22),
+                        Collections.singletonList(
+                                new JobHistoryEntry(6, "QA", "epam")
+                        )),
+                new Employee(
+                        new Person("John", "Galt", 23),
+                        Arrays.asList(
+                                new JobHistoryEntry(3, "dev", "epam"),
+                                new JobHistoryEntry(2, "dev", "google")
+                        )),
+                new Employee(
+                        new Person("John", "Doe", 24),
+                        Arrays.asList(
+                                new JobHistoryEntry(4, "QA", "yandex"),
+                                new JobHistoryEntry(2, "BA", "epam"),
+                                new JobHistoryEntry(2, "dev", "abc")
+                        )),
+                new Employee(
+                        new Person("John", "White", 25),
+                        Collections.singletonList(
+                                new JobHistoryEntry(6, "QA", "epam")
+                        )),
+                new Employee(
+                        new Person("John", "Galt", 26),
+                        Arrays.asList(
+                                new JobHistoryEntry(3, "dev", "epam"),
+                                new JobHistoryEntry(1, "dev", "google")
+                        )),
+                new Employee(
+                        new Person("Bob", "Doe", 27),
+                        Arrays.asList(
+                                new JobHistoryEntry(4, "QA", "yandex"),
+                                new JobHistoryEntry(2, "QA", "epam"),
+                                new JobHistoryEntry(2, "dev", "abc")
+                        )),
+                new Employee(
+                        new Person("John", "White", 28),
+                        Collections.singletonList(
+                                new JobHistoryEntry(6, "BA", "epam")
+                        )),
+                new Employee(
+                        new Person("John", "Galt", 29),
+                        Arrays.asList(
+                                new JobHistoryEntry(3, "dev", "epam"),
+                                new JobHistoryEntry(1, "dev", "google")
+                        )),
+                new Employee(
+                        new Person("John", "Doe", 30),
+                        Arrays.asList(
+                                new JobHistoryEntry(4, "QA", "yandex"),
+                                new JobHistoryEntry(2, "QA", "epam"),
+                                new JobHistoryEntry(5, "dev", "abc")
+                        )),
+                new Employee(
+                        new Person("Bob", "White", 31),
+                        Collections.singletonList(
+                                new JobHistoryEntry(6, "QA", "epam")
+                        ))
+        ));
     }
 
     /**
-     * That method guarantees that returnable employees list contains
-     * at least one employee with first and only experience at Epam.
+     * That method guarantees that returnable employees list contains at least one employee with first and only experience
+     * at Epam.
      *
      * @return list of employee
      */
